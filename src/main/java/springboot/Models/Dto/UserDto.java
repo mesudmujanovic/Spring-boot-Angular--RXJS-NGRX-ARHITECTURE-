@@ -10,14 +10,14 @@ public class UserDto {
     private String name;
     private String lastname;
 
-    private static UserDto fromRequestToDto(UserRequest userRequest){
+    public static UserDto fromRequestToDto(UserRequest userRequest){
         UserDto userDto = new UserDto();
         userDto.setName(userRequest.getName());
-        userDto.setLastname(userDto.getLastname());
+        userDto.setLastname(userRequest.getLastname());
         return userDto;
     }
 
-    private UserResponse fromDtoToResponse(){
+    public UserResponse fromDtoToResponse(){
         UserResponse userResponse = new UserResponse();
         userResponse.setId(this.getId());
         userResponse.setLastname(this.getLastname());
