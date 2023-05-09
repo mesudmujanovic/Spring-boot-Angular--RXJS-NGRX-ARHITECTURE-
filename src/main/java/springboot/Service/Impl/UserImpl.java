@@ -40,4 +40,10 @@ public class UserImpl implements UserService {
         userRepo.deleteById(id);
         return UserDtoMapper.INSTANCE.apply(user);
     }
+
+    @Override
+    public UserDto getUser(Long id) {
+        User user = userRepo.findById(id).orElseThrow(()->new RuntimeException("not found cityId"));
+        return UserDtoMapper.INSTANCE.apply(user);
+    }
 }

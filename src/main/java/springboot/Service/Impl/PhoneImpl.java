@@ -6,8 +6,11 @@ import springboot.Entity.Phone;
 import springboot.Models.Dto.PhoneDto;
 import springboot.Models.Mapper.PhoneMapper.PhoneDtoMapper;
 import springboot.Models.Mapper.PhoneMapper.PhoneMapper;
+import springboot.Models.Mapper.UserMapper.UserMapper;
 import springboot.Repository.PhoneRepo;
+import springboot.Repository.UserRepo;
 import springboot.Service.PhoneService;
+import springboot.Service.UserService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,11 +23,15 @@ public class PhoneImpl implements PhoneService {
     }
 
     @Autowired
-    PhoneRepo phoneRepo;
+    private  PhoneRepo phoneRepo;
+
+    @Autowired
+    private UserService userService;
 
     @Override
-    public PhoneDto savePhone(PhoneDto phoneDto) {
+    public PhoneDto savePhone(PhoneDto phoneDto,Long userId ) {
         Phone phone = PhoneMapper.INSTANCE.apply(phoneDto);
+        phone.setUser(UserMapper.INSTANCE.apply(userService.getUser(userId)));
         Phone phoneSave = phoneRepo.save(phone);
         return PhoneDtoMapper.INSTANCE.apply(phoneSave);
     }

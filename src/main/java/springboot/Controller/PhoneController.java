@@ -24,10 +24,10 @@ public class PhoneController {
         this.phoneService = phoneService;
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<PhoneResponse> savePhone (@RequestBody PhoneRequest phoneRequest){
+    @PostMapping("/savePhone/{userId}")
+    public ResponseEntity<PhoneResponse> savePhone (@PathVariable Long userId, @RequestBody PhoneRequest phoneRequest){
         PhoneDto phoneDto = PhoneDto.fromRequestToDto(phoneRequest);
-        PhoneDto savePhoneDto = phoneService.savePhone(phoneDto);
+        PhoneDto savePhoneDto = phoneService.savePhone(phoneDto,userId);
         return ResponseEntity.ok(savePhoneDto.fromDtoToResponse());
     }
 

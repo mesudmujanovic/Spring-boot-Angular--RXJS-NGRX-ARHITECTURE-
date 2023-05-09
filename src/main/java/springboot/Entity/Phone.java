@@ -18,4 +18,8 @@ public class Phone {
     private Long id;
     private String title;
     private String model;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 }

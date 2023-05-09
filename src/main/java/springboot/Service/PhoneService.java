@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface PhoneService {
 
-    public PhoneDto savePhone(PhoneDto phoneDto);
+    public PhoneDto savePhone(PhoneDto phoneDto,Long id);
 
     public List<PhoneDto> getAllPhones();
 
