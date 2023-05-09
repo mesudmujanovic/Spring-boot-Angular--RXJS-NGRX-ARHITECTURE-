@@ -17,6 +17,5 @@ public class User {
     private Long Id;
     private String name;
     private String lastname;
-    private String k;
 
 }
