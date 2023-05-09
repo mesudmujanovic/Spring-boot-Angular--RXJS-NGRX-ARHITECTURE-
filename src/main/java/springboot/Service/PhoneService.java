@@ -9,4 +9,5 @@ public interface PhoneService {
     public List<PhoneDto> getAllPhones();
 
     public PhoneDto deletePhone(Long id);
+    public PhoneDto getPhone(Long id);
 }

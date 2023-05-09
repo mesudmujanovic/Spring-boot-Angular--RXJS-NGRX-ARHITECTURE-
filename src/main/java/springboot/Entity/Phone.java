@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,4 +23,7 @@ public class Phone {
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user;
+
+    @OneToMany(mappedBy = "phone", fetch = FetchType.LAZY)
+    private List<Phone> phone;
 }

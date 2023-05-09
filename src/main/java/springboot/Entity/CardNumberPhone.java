@@ -16,4 +16,8 @@ public class CardNumberPhone {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int numberCard;
+
+    @ManyToOne
+    @JoinColumn(name = "phoneId")
+    private  Phone phone;
 }

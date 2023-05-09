@@ -48,4 +48,10 @@ public class PhoneImpl implements PhoneService {
         phoneRepo.deleteById(id);
         return PhoneDtoMapper.INSTANCE.apply(phone);
     }
+
+    @Override
+    public PhoneDto getPhone(Long id) {
+        Phone phone = phoneRepo.findById(id).orElseThrow(()-> new RuntimeException("not found"));
+        return PhoneDtoMapper.INSTANCE.apply(phone);
+    }
 }

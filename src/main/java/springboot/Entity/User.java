@@ -19,11 +19,11 @@ public class User {
     private String name;
     private String lastname;
 
-//    user ima vise telefona a telefon ima vise brojeva a broj ima vise telefona
+//    user ima vise telefona a telefon ima vise brojeva a broj ima jednog usera
 //    user onetomany phone
 //    phone manytoone user
 //    phone onetomany cardnumber
-//    cardNumber manyToOne phone
+//    cardNumber onetoone user
 
      @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
      private List<User> user;

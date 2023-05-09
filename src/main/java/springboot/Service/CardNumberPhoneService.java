@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CardNumberPhoneService {
 
-    public CardNumberPhoneDto saveCardNumberPhone (CardNumberPhoneDto cardNumberPhoneDto);
+    public CardNumberPhoneDto saveCardNumberPhone (Long id, CardNumberPhoneDto cardNumberPhoneDto);
 
     public List<CardNumberPhoneDto> findAllCardNumberPhone ();
 
