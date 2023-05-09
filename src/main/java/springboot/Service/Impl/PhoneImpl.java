@@ -1,6 +1,7 @@
 package springboot.Service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import springboot.Entity.Phone;
 import springboot.Models.Dto.PhoneDto;
 import springboot.Models.Mapper.PhoneMapper.PhoneDtoMapper;
@@ -11,6 +12,7 @@ import springboot.Service.PhoneService;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class PhoneImpl implements PhoneService {
 
     public PhoneImpl(PhoneRepo phoneRepo) {

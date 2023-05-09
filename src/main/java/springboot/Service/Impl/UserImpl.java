@@ -20,14 +20,17 @@ public class UserImpl implements UserService {
 
     @Override
     public UserDto saveUser(UserDto userDto) {
+        //Pretvaranje entity u Dto preko Mappera
         User user = UserMapper.INSTANCE.apply(userDto);
         User userSave = userRepo.save(user);
+        //pretvaramo sacuvanog usera(entity) u Dto preko Mappera
         return UserDtoMapper.INSTANCE.apply(userSave);
     }
 
     @Override
     public List<UserDto> getAllUsers() {
         List<User> userList = userRepo.findAll();
+        //vracamo userList i prolazimo kroz svaki user i svaki pronadjeni user pretvaramo u dto preko userDtoMappera i stavljamo sve u list(toList)
         return userList.stream().map(user-> UserDtoMapper.INSTANCE.apply(user)).collect(Collectors.toList());
     }
 

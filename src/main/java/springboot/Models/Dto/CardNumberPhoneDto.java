@@ -10,13 +10,13 @@ public class CardNumberPhoneDto {
     private Long id;
     private int numberCard;
 
-    private static CardNumberPhoneDto fromRequestToDto(CardNumberPhoneReqeust cardNumberPhoneReqeust){
+    public static CardNumberPhoneDto fromRequestToDto(CardNumberPhoneReqeust cardNumberPhoneReqeust){
         CardNumberPhoneDto cardNumberPhoneDto = new CardNumberPhoneDto();
         cardNumberPhoneDto.setNumberCard(cardNumberPhoneReqeust.getNumberCard());
         return cardNumberPhoneDto;
     }
 
-    private CardNumberPhoneResponse fromDtoToResponse(){
+    public CardNumberPhoneResponse fromDtoToResponse(){
         CardNumberPhoneResponse cardNumberPhoneResponse = new CardNumberPhoneResponse();
         cardNumberPhoneResponse.setId(this.getId());
         cardNumberPhoneResponse.setNumberCard(this.getNumberCard());

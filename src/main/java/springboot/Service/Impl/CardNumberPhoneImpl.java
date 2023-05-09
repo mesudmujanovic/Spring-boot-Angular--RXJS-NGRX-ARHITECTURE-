@@ -1,6 +1,7 @@
 package springboot.Service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import springboot.Entity.CardNumberPhone;
 import springboot.Models.Dto.CardNumberPhoneDto;
 import springboot.Models.Mapper.CardNumberPhoneMapper.CardNumberPhoneDtoMapper;
@@ -11,6 +12,7 @@ import springboot.Service.CardNumberPhoneService;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class CardNumberPhoneImpl implements CardNumberPhoneService {
 
     public CardNumberPhoneImpl(CardNumberPhoneRepo cardNumberPhoneRepo) {

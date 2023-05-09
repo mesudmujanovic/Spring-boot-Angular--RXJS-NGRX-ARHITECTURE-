@@ -13,7 +13,7 @@ public class PhoneDto {
     public static PhoneDto fromRequestToDto (PhoneRequest phoneRequest){
         PhoneDto phoneDto = new PhoneDto();
         phoneDto.setTitle(phoneRequest.getTitle());
-        phoneDto.setModel(phoneDto.getModel());
+        phoneDto.setModel(phoneRequest.getModel());
         return phoneDto;
     }
 

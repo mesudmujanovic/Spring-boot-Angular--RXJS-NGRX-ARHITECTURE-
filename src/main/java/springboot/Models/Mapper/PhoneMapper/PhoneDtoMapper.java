@@ -12,7 +12,7 @@ public enum PhoneDtoMapper implements DTOmapper<PhoneDto, Phone> {
         PhoneDto phoneDto = new PhoneDto();
         phoneDto.setId(phone.getId());
         phoneDto.setModel(phone.getModel());
-        phoneDto.setTitle(phoneDto.getTitle());
+        phoneDto.setTitle(phone.getTitle());
         return phoneDto;
     }
 }
