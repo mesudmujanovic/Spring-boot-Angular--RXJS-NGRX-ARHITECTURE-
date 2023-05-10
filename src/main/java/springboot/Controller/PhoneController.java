@@ -3,14 +3,13 @@ package springboot.Controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import springboot.Entity.Phone;
+import org.springframework.web.multipart.MultipartFile;
 import springboot.Models.Dto.PhoneDto;
-import springboot.Models.Mapper.PhoneMapper.PhoneDtoMapper;
-import springboot.Models.Mapper.PhoneMapper.PhoneMapper;
 import springboot.Models.Request.PhoneRequest;
 import springboot.Models.Response.PhoneResponse;
 import springboot.Service.PhoneService;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,7 +24,8 @@ public class PhoneController {
     }
 
     @PostMapping("/savePhone/{userId}")
-    public ResponseEntity<PhoneResponse> savePhone (@PathVariable Long userId, @RequestBody PhoneRequest phoneRequest){
+    public ResponseEntity<PhoneResponse> savePhone (
+            @PathVariable Long userId, @RequestBody PhoneRequest phoneRequest){
         PhoneDto phoneDto = PhoneDto.fromRequestToDto(phoneRequest);
         PhoneDto savePhoneDto = phoneService.savePhone(phoneDto,userId);
         return ResponseEntity.ok(savePhoneDto.fromDtoToResponse());

@@ -12,4 +12,5 @@ public class PhoneResponse {
     private Long id;
     private String title;
     private String model;
+
 }

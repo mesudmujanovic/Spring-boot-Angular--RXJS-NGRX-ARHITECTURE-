@@ -54,4 +54,10 @@ public class PhoneImpl implements PhoneService {
         Phone phone = phoneRepo.findById(id).orElseThrow(()-> new RuntimeException("not found"));
         return PhoneDtoMapper.INSTANCE.apply(phone);
     }
+
+    @Override
+    public Phone getEntityPhone(Long id) {
+        Phone phone = phoneRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+        return phone;
+    }
 }

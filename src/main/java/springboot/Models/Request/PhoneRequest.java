@@ -6,4 +6,5 @@ import lombok.Data;
 public class PhoneRequest {
     private String title;
     private String model;
+
 }

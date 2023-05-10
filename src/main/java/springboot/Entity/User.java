@@ -19,11 +19,12 @@ public class User {
     private String name;
     private String lastname;
 
-//    user ima vise telefona a telefon ima vise brojeva a vise brojeva ima jednog usera
+//    user ima vise telefona a telefon ima vise brojeva a vise brojeva ima jednog usera a phone ima vise slika
 //    user OneToMany phone
 //    phone ManyToOne user
 //    phone OneToMany cardnumber
 //    cardNumber manyToOne user
+//    image ManyToOne
 
 
      @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)

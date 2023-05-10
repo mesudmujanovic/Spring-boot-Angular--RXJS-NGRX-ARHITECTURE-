@@ -1,4 +1,5 @@
 package springboot.Service;
+import springboot.Entity.Phone;
 import springboot.Models.Dto.PhoneDto;
 import java.util.List;
 
@@ -10,4 +11,6 @@ public interface PhoneService {
 
     public PhoneDto deletePhone(Long id);
     public PhoneDto getPhone(Long id);
+
+    public Phone getEntityPhone(Long id);
 }

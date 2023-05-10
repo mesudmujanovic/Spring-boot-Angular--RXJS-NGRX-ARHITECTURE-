@@ -3,6 +3,7 @@ package springboot.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,4 +27,7 @@ public class Phone {
 
     @OneToMany(mappedBy = "phone", fetch = FetchType.LAZY)
     private List<Phone> phone;
+
+    @OneToMany(mappedBy = "phoneImg", fetch = FetchType.LAZY)
+    private List<Image> image;
 }
