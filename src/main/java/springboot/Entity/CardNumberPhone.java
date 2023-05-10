@@ -20,4 +20,8 @@ public class CardNumberPhone {
     @ManyToOne
     @JoinColumn(name = "phoneId")
     private  Phone phone;
+
+    @ManyToOne()
+    @JoinColumn(name = "userId")
+    private User userPhones;
 }

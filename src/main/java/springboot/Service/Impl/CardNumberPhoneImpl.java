@@ -7,9 +7,11 @@ import springboot.Models.Dto.CardNumberPhoneDto;
 import springboot.Models.Mapper.CardNumberPhoneMapper.CardNumberPhoneDtoMapper;
 import springboot.Models.Mapper.CardNumberPhoneMapper.CardNumberPhoneMapper;
 import springboot.Models.Mapper.PhoneMapper.PhoneMapper;
+import springboot.Models.Mapper.UserMapper.UserMapper;
 import springboot.Repository.CardNumberPhoneRepo;
 import springboot.Service.CardNumberPhoneService;
 import springboot.Service.PhoneService;
+import springboot.Service.UserService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,11 +28,14 @@ public class CardNumberPhoneImpl implements CardNumberPhoneService {
     @Autowired
     public PhoneService phoneService;
 
+    @Autowired
+    public UserService userService;
 
     @Override
-    public CardNumberPhoneDto saveCardNumberPhone(Long phoneId, CardNumberPhoneDto cardNumberPhoneDto) {
+    public CardNumberPhoneDto saveCardNumberPhone(Long phoneId, CardNumberPhoneDto cardNumberPhoneDto,Long userId) {
         CardNumberPhone cardNumberPhone = CardNumberPhoneMapper.INSTANCE.apply(cardNumberPhoneDto);
         cardNumberPhone.setPhone(PhoneMapper.INSTANCE.apply(phoneService.getPhone(phoneId)));
+        cardNumberPhone.setUserPhones(UserMapper.INSTANCE.apply(userService.getUser(userId)));
         CardNumberPhone saveCardNumberPhone = cardNumberPhoneRepo.save(cardNumberPhone);
         return CardNumberPhoneDtoMapper.INSTANCE.apply(saveCardNumberPhone);
     }

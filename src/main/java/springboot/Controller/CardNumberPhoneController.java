@@ -19,10 +19,13 @@ public class CardNumberPhoneController {
         this.cardNumberPhoneService = cardNumberPhoneService;
     }
 
-    @PostMapping("/save/{phoneId}")
-    public ResponseEntity<CardNumberPhoneResponse> saveCardNumberPhone(@PathVariable Long phoneId, @RequestBody CardNumberPhoneReqeust cardNumberPhoneReqeust){
+    @PostMapping("/save/phoneId{phoneId}/userId{userId}")
+    public ResponseEntity<CardNumberPhoneResponse> saveCardNumberPhone(
+            @PathVariable Long userId,
+            @PathVariable Long phoneId,
+            @RequestBody CardNumberPhoneReqeust cardNumberPhoneReqeust){
         CardNumberPhoneDto cardNumberPhoneDto = CardNumberPhoneDto.fromRequestToDto(cardNumberPhoneReqeust);
-        CardNumberPhoneDto saveCardNumberPhone = cardNumberPhoneService.saveCardNumberPhone(phoneId,cardNumberPhoneDto);
+        CardNumberPhoneDto saveCardNumberPhone = cardNumberPhoneService.saveCardNumberPhone(phoneId,cardNumberPhoneDto,userId);
         return ResponseEntity.ok(saveCardNumberPhone.fromDtoToResponse());
     }
 
