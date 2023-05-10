@@ -1,5 +1,4 @@
 package springboot.Models.Dto;
-
 import lombok.Data;
 import springboot.Models.Request.UserRequest;
 import springboot.Models.Response.UserResponse;
@@ -24,5 +23,4 @@ public class UserDto {
         userResponse.setName(this.getName());
         return userResponse;
     }
-
 }

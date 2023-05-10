@@ -35,7 +35,6 @@ public class CardNumberPhoneController {
         return ResponseEntity.ok(cardNumberPhoneResponseList.stream().map(CardNumberPhoneDto::fromDtoToResponse).collect(Collectors.toList()));
     }
 
-   //delete
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<CardNumberPhoneResponse> deleteCard(@PathVariable Long id){
         return ResponseEntity.ok(cardNumberPhoneService.deleteCardNumberPhone(id).fromDtoToResponse());

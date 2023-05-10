@@ -1,7 +1,5 @@
 package springboot.Models.Request;
-
 import lombok.Data;
-
 import javax.persistence.Lob;
 
 @Data

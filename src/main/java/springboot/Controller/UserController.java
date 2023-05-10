@@ -3,11 +3,9 @@ package springboot.Controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springboot.Models.Dto.UserDto;
-import springboot.Models.Mapper.UserMapper.UserDtoMapper;
 import springboot.Models.Request.UserRequest;
 import springboot.Models.Response.UserResponse;
 import springboot.Service.UserService;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,7 +13,6 @@ import java.util.stream.Collectors;
 @RequestMapping("/user")
 @CrossOrigin("*")
 public class UserController {
-
     private UserService userService;
 
     public UserController(UserService userService) {
@@ -42,6 +39,4 @@ public class UserController {
     public ResponseEntity<UserResponse> deleteUser(@PathVariable Long id){
         return ResponseEntity.ok(userService.deleteUser(id).fromDtoToResponse());
     }
-
-
 }

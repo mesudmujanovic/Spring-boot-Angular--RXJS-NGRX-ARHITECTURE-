@@ -9,7 +9,6 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/imageOrFile")
 public class ImageController {
-
     @Autowired
     private ImageServiceImpl imageService;
 
@@ -18,5 +17,4 @@ public class ImageController {
                                   @PathVariable Long phoneId) throws IOException {
         return imageService.saveImage(file,phoneId);
     }
-
 }

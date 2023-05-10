@@ -1,7 +1,5 @@
 package springboot.Service;
-
 import springboot.Models.Dto.CardNumberPhoneDto;
-
 import java.util.List;
 
 public interface CardNumberPhoneService {

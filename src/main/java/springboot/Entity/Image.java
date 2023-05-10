@@ -15,11 +15,11 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Lob
     private byte[] image;
 
     @ManyToOne
     @JoinColumn(name ="phoneId")
     private Phone phoneImg;
-
 }

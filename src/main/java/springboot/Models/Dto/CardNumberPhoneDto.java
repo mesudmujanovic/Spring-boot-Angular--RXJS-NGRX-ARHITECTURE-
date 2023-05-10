@@ -3,10 +3,8 @@ package springboot.Models.Dto;
 import lombok.Data;
 import springboot.Models.Request.CardNumberPhoneReqeust;
 import springboot.Models.Response.CardNumberPhoneResponse;
-
 @Data
 public class CardNumberPhoneDto {
-
     private Long id;
     private int numberCard;
 

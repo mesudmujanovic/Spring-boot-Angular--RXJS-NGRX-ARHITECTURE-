@@ -3,10 +3,8 @@ package springboot.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,7 +23,6 @@ public class User {
 //    phone OneToMany cardnumber
 //    cardNumber manyToOne user
 //    image ManyToOne
-
 
      @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
      private List<User> user;

@@ -1,8 +1,5 @@
 package springboot.Service;
-
-import springboot.Entity.User;
 import springboot.Models.Dto.UserDto;
-
 import java.util.List;
 
 public interface UserService {

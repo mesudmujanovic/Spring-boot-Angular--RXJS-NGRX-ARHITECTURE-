@@ -1,15 +1,10 @@
 package springboot.Controller;
-
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import springboot.Models.Dto.PhoneDto;
 import springboot.Models.Request.PhoneRequest;
 import springboot.Models.Response.PhoneResponse;
 import springboot.Service.PhoneService;
-
-import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,5 +36,4 @@ public class PhoneController {
     public ResponseEntity<PhoneResponse> deletePhone (@PathVariable Long id){
         return ResponseEntity.ok(phoneService.deletePhone(id).fromDtoToResponse());
     }
-
 }

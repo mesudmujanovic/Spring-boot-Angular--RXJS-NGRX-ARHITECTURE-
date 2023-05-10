@@ -3,8 +3,6 @@ package springboot.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,7 +11,6 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "phone")
-
 public class Phone {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
