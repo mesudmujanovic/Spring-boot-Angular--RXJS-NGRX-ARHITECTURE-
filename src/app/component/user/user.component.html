@@ -1,0 +1,20 @@
+<h1>User Information</h1>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name">
+    </div>
+    <div>
+        <label for="lastname">LastName</label>
+        <input type="text" id="lastname" formControlName="lastname">
+    </div>
+<button type="submit" [disabled]="!postForm.valid">Add</button>
+</form>
+
+<div *ngIf="selectedUser$ | async as selectedUser">
+  <div *ngFor="let user of user$ | async" [ngClass]="{'selectedUser': user.name == selectedUser.name}"
+  (click)="onSelectedUser(user)">
+    {{user.name}}
+    {{user.lastname}}
+  </div>
+</div>
