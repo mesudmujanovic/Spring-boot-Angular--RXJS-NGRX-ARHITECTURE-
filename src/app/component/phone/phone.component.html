@@ -1,0 +1,21 @@
+<h2>Dodaj novi telefon</h2>
+
+<form [formGroup]="phoneForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Naslov:</label>
+    <input type="text" id="title" formControlName="title" required>
+</div>
+  <div>
+    <label for="model">Model:</label>
+    <input type="text" id="model" formControlName="model" required>
+  </div>
+  <button type="submit">Dodaj</button>
+</form>
+
+
+<div *ngFor="let phone of allPhone$ | async as allPhone$">
+    <div>
+        {{phone.title}}
+        {{phone.model}}
+      </div>
+</div>
